@@ -1,0 +1,9 @@
+c:\isssa\Day1Exercise\Day1Exercise\bin\Debug\netcoreapp1.1\Day1Exercise.deps.json
+c:\isssa\Day1Exercise\Day1Exercise\bin\Debug\netcoreapp1.1\Day1Exercise.runtimeconfig.json
+c:\isssa\Day1Exercise\Day1Exercise\bin\Debug\netcoreapp1.1\Day1Exercise.runtimeconfig.dev.json
+c:\isssa\Day1Exercise\Day1Exercise\bin\Debug\netcoreapp1.1\Day1Exercise.dll
+c:\isssa\Day1Exercise\Day1Exercise\bin\Debug\netcoreapp1.1\Day1Exercise.pdb
+c:\isssa\Day1Exercise\Day1Exercise\obj\Debug\netcoreapp1.1\Day1Exercise.csprojResolveAssemblyReference.cache
+c:\isssa\Day1Exercise\Day1Exercise\obj\Debug\netcoreapp1.1\Day1Exercise.AssemblyInfo.cs
+c:\isssa\Day1Exercise\Day1Exercise\obj\Debug\netcoreapp1.1\Day1Exercise.dll
+c:\isssa\Day1Exercise\Day1Exercise\obj\Debug\netcoreapp1.1\Day1Exercise.pdb
