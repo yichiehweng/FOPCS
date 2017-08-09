@@ -16,6 +16,7 @@ namespace Day4
             //e1.SelectionSort();
             //e1.ArrayResize();
             Exercise e2 = new Exercise();
+            e2.SectionF_Q3();
             //e2.SectionF_Q4();
             //e2.SectionF_Q5();
             //e2.SectionF_Q6();
@@ -227,9 +228,18 @@ namespace Day4
         public void SectionF_Q3()
         {
             Console.Write("Please enter a phase:");
-            String s = Console.ReadLine();
-            char[] c = new char[] { ' ', ',' ,'.'};
-            string r = s.Trim(c).ToLower();
+            String phase = Console.ReadLine();
+            string[] c = { " ",",","."};
+            foreach(string  i in c)
+            {
+                phase = phase.Replace(i, string.Empty).ToLower();
+            }
+            string first = phase.Substring(0, phase.Length / 2);
+            char[] arr = phase.ToCharArray();
+            Array.Reverse(arr);
+            string temp = new string(arr);
+            string second = temp.Substring(0, temp.Length / 2); 
+            Console.WriteLine(first.Equals(second));
         }
         public void SectionF_Q4()
         {
@@ -363,11 +373,25 @@ namespace Day4
             {
                 qtys[i] = Convert.ToInt32(Console.ReadLine());
             }
-            int[] qtys2 = qtys;
-           
-            Array.Sort(qtys);
-            
-            
+
+            for (int green = 0; green <= qtys.Length - 1; green++)
+            {
+                for (int red = green + 1; red <= qtys.Length - 1; red++)
+                {
+                    if (qtys[green] > qtys[red])
+                    {
+                        //swap
+                        int changer = qtys[green];
+                        qtys[green] = qtys[red];
+                        qtys[red] = changer;
+
+                        string changer2 = months[green];
+                        months[green] = months[red];
+                        months[red] = changer2;
+                    }
+                }
+            }
+
 
             double sum = 0;
             for (int i = 0; i < qtys.Length; i++)
