@@ -16,13 +16,14 @@ namespace Day4
             //e1.SelectionSort();
             //e1.ArrayResize();
             Exercise e2 = new Exercise();
-            e2.SectionF_Q3();
+            //e2.SectionF_Q3();
             //e2.SectionF_Q4();
             //e2.SectionF_Q5();
             //e2.SectionF_Q6();
             //e2.SectionG_Q1();
             //e2.SectionG_Q2();
             //e2.SectionG_Q3();
+            //e2.test();
         }
     }
 
@@ -228,12 +229,22 @@ namespace Day4
         public void SectionF_Q3()
         {
             Console.Write("Please enter a phase:");
-            String phase = Console.ReadLine();
+            String input = Console.ReadLine();
+            /*
             string[] c = { " ",",","."};
             foreach(string  i in c)
             {
                 phase = phase.Replace(i, string.Empty).ToLower();
             }
+            */
+            char[] c = { ' ', ',', '.' };
+            string[] s = input.Split(c);
+            string output = "";
+            for (int i = 0; i < s.Length; i++)
+            {
+                output = output + s[i];
+            }
+            string phase = output.ToLower();
             string first = phase.Substring(0, phase.Length / 2);
             char[] arr = phase.ToCharArray();
             Array.Reverse(arr);
@@ -510,6 +521,20 @@ namespace Day4
 
 
 
+        }
+        public void test()
+        {
+            Console.Write("Please enter a phase:");
+            String phase = Console.ReadLine();
+            char[] c = { ' ', ',', '.' };
+            string[] s=phase.Split(c);
+            string output = "";
+            for(int i = 0; i < s.Length; i++)
+            {
+                output = output + s[i];
+            }
+            Console.WriteLine(output.ToLower());
+            
         }
     }
 }
