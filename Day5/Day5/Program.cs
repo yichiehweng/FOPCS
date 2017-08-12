@@ -27,7 +27,7 @@ namespace Day5
             //e.SectionHQ10();
             //e.SectionHQ11();
         }
-        
+
     }
     class Lecture
     {
@@ -44,9 +44,9 @@ namespace Day5
             //Length=total element(18 in this case)
             //getLength(0),getLength(1):9,1
             //i=row j=col
-            for(int i = 0; i < theArray.GetLength(0); i++)
+            for (int i = 0; i < theArray.GetLength(0); i++)
             {
-                for(int j = 0; j < theArray.GetLength(1); j++)
+                for (int j = 0; j < theArray.GetLength(1); j++)
                 {
                     if (input == theArray[i, j])
                     {
@@ -54,12 +54,12 @@ namespace Day5
                     }
                 }
             }
-           
 
-            if (count<= 0) {
+
+            if (count <= 0) {
                 Console.WriteLine("There is no {0} in the array.", input);
             } else {
-                Console.WriteLine("The number of {0} is {1}.",input,count);
+                Console.WriteLine("The number of {0} is {1}.", input, count);
             }
         }
         public void MethodExample1()
@@ -81,7 +81,7 @@ namespace Day5
             Methods method = new Methods();
             method.Number(number);
             Console.WriteLine("Number={0}", number);//number=100; because no assignment
-            number=method.Number(number);
+            number = method.Number(number);
             Console.WriteLine("Number={0}", number);//number=5;
 
 
@@ -134,11 +134,11 @@ namespace Day5
             Console.Write("enter tax rate:");
             taxRate = Double.Parse(Console.ReadLine());
             double total = TaxCalculator(amount);
-            Console.WriteLine("total amount:{0}",total);
+            Console.WriteLine("total amount:{0}", total);
         }//class variables example
         public double TaxCalculator(double amount)
         {
-            return amount * taxRate+amount; 
+            return amount * taxRate + amount;
         }
     }
     class Excercise
@@ -153,7 +153,7 @@ namespace Day5
         public void SectionHQ2()
         {
             Methods method = new Methods();
-            int[] outputArray=method.ArrayReader();
+            int[] outputArray = method.ArrayReader();
             method.PrintArray(outputArray);
         }
         public void SectionHQ3()
@@ -177,7 +177,7 @@ namespace Day5
         {
             Methods method = new Methods();
             int x = method.IntergerChecker("Please enter a integer:");
-            string ans = method.Hexadecimal(x);
+            string ans = method.Hexadecimal2(x);
             Console.WriteLine(ans);
 
         }
@@ -218,7 +218,7 @@ namespace Day5
             Methods method = new Methods();
             int[,] A = method.MatrixReader();
             int[,] B = method.MatrixReader();
-            int[,] C = method.MatrixMultiplication(A,B);
+            int[,] C = method.MatrixMultiplication(A, B);
             method.MatrixPrinter(C);
 
 
@@ -227,7 +227,7 @@ namespace Day5
         {
             Methods method = new Methods();
             double[] input = method.ArrayReaderDouble();
-            double[] output = method.ProcessArray(input,method.DoubleSqrt);
+            double[] output = method.ProcessArray(input, method.DoubleSqrt);
             method.PrintArray(output);
 
         }
@@ -243,7 +243,7 @@ namespace Day5
                 Console.Write(message);
                 string input = Console.ReadLine();
                 isParsible = Int32.TryParse(input, out output);
-            }while(isParsible == false);
+            } while (isParsible == false);
 
             return output;
         }
@@ -253,7 +253,8 @@ namespace Day5
             int input = Convert.ToInt32(Console.ReadLine());
             return input;
         }
-        public  void PrintOutput(int count, int input) {
+        public void PrintOutput(int count, int input)
+        {
             if (count <= 0)
             {
                 Console.WriteLine("There is no {0} in the array.", input);
@@ -282,11 +283,12 @@ namespace Day5
         {
             bool isParsible = false;
             int output;
-            do {
+            do
+            {
                 Console.Write(massage);
                 string input = Console.ReadLine();
                 isParsible = Int32.TryParse(input, out output);
-            } while (isParsible==false);
+            } while (isParsible == false);
             return output;
         }
         public int Number(int x)
@@ -322,7 +324,7 @@ namespace Day5
             Console.Write("Please enter the length of the array:");
             int arrayLength = Convert.ToInt32(Console.ReadLine());
             int[] outputArray = new int[arrayLength];
-            for(int i = 0; i < arrayLength; i++)
+            for (int i = 0; i < arrayLength; i++)
             {
                 Console.Write("Please enter element{0}:", i + 1);
                 outputArray[i] = Convert.ToInt32(Console.ReadLine());
@@ -343,9 +345,9 @@ namespace Day5
         }
         public void PrintArray(int[] arr)
         {
-            for(int i = 0; i < arr.Length; i++)
+            for (int i = 0; i < arr.Length; i++)
             {
-                Console.WriteLine("Element {0} is {1}.",i+1,arr[i]);
+                Console.WriteLine("Element {0} is {1}.", i + 1, arr[i]);
             }
         }
         public void PrintArray(double[] arr)
@@ -366,12 +368,12 @@ namespace Day5
             bool isIn = false;
             s1 = StringTrimer(s1);
             s2 = StringTrimer(s2);
-            string[] comparedAarray=new string[s1.Length - s2.Length + 1];
-            for(int i = 0; i < comparedAarray.Length; i++)
+            string[] comparedAarray = new string[s1.Length - s2.Length + 1];
+            for (int i = 0; i < comparedAarray.Length; i++)
             {
-                comparedAarray[i]=s1.Substring(i,s2.Length);
+                comparedAarray[i] = s1.Substring(i, s2.Length);
             }
-            for(int i = 0; i < comparedAarray.Length; i++)
+            for (int i = 0; i < comparedAarray.Length; i++)
             {
                 if (s2 == comparedAarray[i])
                 {
@@ -379,12 +381,12 @@ namespace Day5
                 }
             }
 
-            return isIn; 
+            return isIn;
         }
         public string StringTrimer(string input)
         {
             string output = "";
-            char[] c = {',', '.' };
+            char[] c = { ',', '.' };
             string[] s = input.Split(c);
             for (int i = 0; i < s.Length; i++)
             {
@@ -408,7 +410,7 @@ namespace Day5
             {
                 if (s2 == comparedAarray[i])
                 {
-                    index = i ;break;
+                    index = i; break;
                 }
             }
             return index;
@@ -416,14 +418,15 @@ namespace Day5
         public string Hexadecimal(int input)
         {
             string ans = "0";
-           
-            if (input ==0)
+
+            if (input == 0)
             {
                 ans = "0";
             }
-            else {
+            else
+            {
                 int reminder = input % 16;
-                int multiply=input / 16;
+                int multiply = input / 16;
                 switch (reminder)
                 {
                     case 0:
@@ -436,7 +439,7 @@ namespace Day5
                     case 7:
                     case 8:
                     case 9:
-                        ans = multiply.ToString() + reminder.ToString();break;
+                        ans = multiply.ToString() + reminder.ToString(); break;
                     case 10:
                         ans = multiply.ToString() + "A"; break;
                     case 11:
@@ -456,18 +459,18 @@ namespace Day5
         }
         public string Substitute(string s, char c1, char c2)
         {
-            string output=s.Replace(c1, c2);
+            string output = s.Replace(c1, c2);
             return output;
         }
         public char CharReader(string message)
         {
             Console.WriteLine(message);
-           char output = Convert.ToChar(Console.ReadLine());
+            char output = Convert.ToChar(Console.ReadLine());
             return output;
         }
         public int[] ResizeArray(int[] arr, int newSize)
         {
-            int[] output=new int[newSize];
+            int[] output = new int[newSize];
             if (arr.Length <= output.Length)
             {
                 for (int i = 0; i < arr.Length; i++)
@@ -482,7 +485,7 @@ namespace Day5
                     output[i] = arr[i];
                 }
             }
-            
+
             return output;
         }
         public bool CalcIsPrime(int number)
@@ -533,8 +536,8 @@ namespace Day5
         }
         public int[,] MatrixMultiplication(int[,] A, int[,] B)
         {
-            int[,] output=new int[A.GetLength(0),B.GetLength(1)];
-           
+            int[,] output = new int[A.GetLength(0), B.GetLength(1)];
+
 
             for (int j = 0; j < output.GetLength(0); j++)
             {
@@ -543,7 +546,7 @@ namespace Day5
                     output[i, j] = 0;
                     for (int k = 0; k < A.GetLength(1); k++)
                     {
-                        output[i, j] +=A[i, k] * B[k, j];
+                        output[i, j] += A[i, k] * B[k, j];
                     }
 
                 }
@@ -555,7 +558,7 @@ namespace Day5
         {
             for (int i = 0; i < A.GetLength(0); i++)
             {
-                for (int j = 0; j <A.GetLength(1); j++)
+                for (int j = 0; j < A.GetLength(1); j++)
                 {
                     Console.Write(A[i, j] + "\t");
                 }
@@ -570,8 +573,8 @@ namespace Day5
         public delegate double DoubleOps(double x);
         public double[] ProcessArray(double[] arr, DoubleOps ops)
         {
-            double[] output = new double [arr.Length];
-            for(int i=0;i<output.Length;i++)
+            double[] output = new double[arr.Length];
+            for (int i = 0; i < output.Length; i++)
             {
                 output[i] = ops(arr[i]);
             }
@@ -587,5 +590,58 @@ namespace Day5
             int intAgain = int.Parse(hexValue, System.Globalization.NumberStyles.HexNumber);
             Console.WriteLine(hexValue);
         }
+        // static method:can access the method and do not need to create an object
+        // auto method: need to access the method after creating the object 
+        public string Hexadecimal2(int input)
+        {
+            string ans = "";
+
+            if (input == 0)
+            {
+                ans = "0";
+            }
+            else
+            {
+                int reminder;
+                int multiply;
+                do
+                {
+                    multiply = input / 16;
+                    reminder = input % 16;
+                    switch (reminder)
+                    {
+                        case 0:
+                        case 1:
+                        case 2:
+                        case 3:
+                        case 4:
+                        case 5:
+                        case 6:
+                        case 7:
+                        case 8:
+                        case 9:
+                            ans =reminder.ToString()+ans; break;
+                        case 10:
+                            ans ="A"+ans; break;
+                        case 11:
+                            ans ="B"+ans; break;
+                        case 12:
+                            ans ="C"+ans; break;
+                        case 13:
+                            ans ="D"+ans; break;
+                        case 14:
+                            ans ="E"+ans; break;
+                        case 15:
+                            ans ="F"+ans; break;
+                    }
+                    input = multiply;
+
+                } while (multiply > 16);
+                ans = multiply.ToString() + ans;
+            }
+            return ans;
+        }
+
     }
+    
 }
